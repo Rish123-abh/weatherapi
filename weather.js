@@ -6,6 +6,10 @@ const searchweathertab=document.querySelector('.form-container');
 const showweathertab=document.querySelector('.user-info-container');
 const loadingcontainer=document.querySelector('.loading');
 const alluicontainer=document.querySelector('.weather-container');
+const notFound=document.querySelector(".errorContainer");
+const errorText=document.querySelector("[ data-errorText]");
+const errorBtn=document.querySelector("#button");
+
 let current_tab=userweather;
 const API_KEY='f4afe06828e8a524e59165476b7a2ffa';
 current_tab.classList.add("current-tab")
@@ -128,9 +132,6 @@ function getlocation(){
 const grantaccessbutton=document.querySelector("[grant-button]");
 grantaccessbutton.addEventListener("click",getlocation);
 
-const notFound=document.querySelector(".errorContainer");
-const errorText=document.querySelector("[ data-errorText]");
-const errorBtn=document.querySelector("#button");
 
 async function fetchSearchWeatherInfo(city){
     loadingcontainer.classList.add("active");
