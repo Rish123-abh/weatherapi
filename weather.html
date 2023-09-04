@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="weather.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h1>WEATHER  &nbsp; APP</h1>
+
+        <div class="tab-container">
+            <p class="tab current-tab" id="user-weather">Search Weather</p>
+            <p class="tab" id="search-weather"> Your Weather</p>
+        </div>
+<!-- Yeh contain karega 4 ui ko jo alag alag case me displace karna hai  -->
+        <div class="weather-container">
+        <!--Grant permission   tab-->
+            <div class="grant-location sub-container ">
+                <img src="location.png" alt="" width="80" height="80" loading="lazy">
+                <p>Grant Location Access</p>
+                <p>Alow access to get weather information </p>
+                <button class="btn" grant-button> Grant Access </button>
+            </div>
+            <!--Search weather tab   -->
+            
+            <form class="form-container active">
+                    <input placeholder="Search your city..." class="search">
+                    <button class="btn" type="submit">
+                        <img src="search.png" alt="" width="20" height="20" loading="lazy">
+                    </button>
+            </form>
+            <!--loading container -->
+            <div class="loading sub-container">
+                <img src="loading.gif" alt="" width="150" height="150">
+                <p>loading</p>
+            </div>
+            <!-- Show weather container  -->
+            <div class="user-info-container sub-container">
+                <!-- city name and flag info -->
+                <div class="name">
+                    <!-- Here dynamicaaly value add karni hai kio fix value nhi hai isliye neeche blank choda hai js se add karenge  -->
+                    <p data-cityname></p>
+                    <img data-countryicon>
+                </div>
+                <p data-weatherdesc></p>
+                <img data-weathericon>
+                <p data-temp></p>
+            
+           <div class="parameter-desc">
+               <!--card1  -->
+                <div class="parameter">
+                    <img src="wind.png" alt="">
+                    <p>Windspeed</p>
+                    <p data-windspeed></p>
+                </div>
+                <div class="parameter">
+                    <img src="humidity.png" alt="">
+                    <p>Humidity</p>
+                    <p data-humidity></p>
+                </div>
+                <div class="parameter">
+                    <img src="cloud.png" alt="">
+                    <p>Cloudy</p>
+                    <p data-cloudy></p>
+                </div>
+           </div>     
+
+
+            </div>
+
+            <div class="errorContainer sub-container">
+                <img src="not-found.png" alt="">
+                <p data-errorText></p>
+                <button class="btn" id="button">Retry</button>      
+            </div>
+        </div>
+    </div>
+
+    <script src="weather.js"></script>
+</body>
+</html>
