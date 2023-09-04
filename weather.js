@@ -70,7 +70,7 @@ async function fetchUserWeatherInfo(coordinates) {
         }
         // data aa chuka hai api se to loading ko invisible karenge 
         loadingcontainer.classList.remove('active');
-
+        notFound.classList.remove('active');
         showweathertab.classList.add('active');
         renderWeatherInfo(data);
     }
